@@ -2,5 +2,19 @@ require "nvchad.options"
 
 -- add yours here!
 
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+local opt = vim.opt
+opt.cursorlineopt ='both' -- to enable cursorline!
+opt.relativenumber = true
+
+opt.list = true
+opt.breakindent = true
+
+vim.g.clipboard = {
+  name = 'WslClipboard',
+  copy = {
+    ['+'] = 'clip.exe',
+    ['*'] = 'clip.exe',
+  },
+  cache_enabled = 0,
+}
+
