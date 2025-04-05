@@ -10,11 +10,14 @@ opt.list = true
 opt.breakindent = true
 
 vim.g.clipboard = {
-  name = 'WslClipboard',
-  copy = {
-    ['+'] = 'clip.exe',
-    ['*'] = 'clip.exe',
-  },
-  cache_enabled = 0,
+    name = 'win32yank-wsl',
+    copy = {
+        ['+'] =  'win32yank.exe -i --crlf',
+        ['*'] =  'win32yank.exe -i --crlf',
+    },
+    paste = {
+        ['+'] = 'win32yank.exe -o --lf',
+        ['*'] = 'win32yank.exe -o --lf',
+    },
+    cache_enabled = true,
 }
-
