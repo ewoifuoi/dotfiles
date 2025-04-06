@@ -114,3 +114,6 @@ export https_proxy=$http_proxy
 export all_proxy="http://$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):7890"
 export GPG_TTY=$(tty)
 export PATH="$HOME/.local/bin:$PATH"
+
+alias c='clear'
+alias e='exit'
