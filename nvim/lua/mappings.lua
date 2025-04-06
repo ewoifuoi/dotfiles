@@ -18,9 +18,9 @@ map({"n", "i"},"<F5>", function ()
   vim.cmd("w")
 
   if filetype == "python" then
-    cmd = "python" .. filename
+    cmd = "python " .. filename
   end
-  vim.cmd("split | terminal" .. cmd)
+  vim.cmd("split | terminal " .. cmd)
   vim.cmd("startinsert")
 end)
 
