@@ -23,6 +23,7 @@ end
 map({"n", "i"},"<F5>", function ()
   local filetype = vim.bo.filetype
   local filename = vim.fn.expand("%:p")
+  local basename = vim.fn.expand("%:t:r")
   local cmd = ""
 
   vim.cmd("w")
@@ -33,6 +34,9 @@ map({"n", "i"},"<F5>", function ()
     else
       cmd = "python " .. filename
     end
+  elseif filetype == "cpp" then
+    local output = "./" .. basename
+    cmd = "g++ --std=c++20 -O2 -o " .. output .." " .. filename .. "&&" .. output
   end
   vim.cmd("split | terminal " .. cmd)
   vim.cmd("startinsert")
