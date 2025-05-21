@@ -10,14 +10,14 @@ opt.list = true
 opt.breakindent = true
 
 vim.g.clipboard = {
-    name = 'win32yank-wsl',
+    name = 'xclip',
     copy = {
-        ['+'] =  'win32yank.exe -i --crlf',
-        ['*'] =  'win32yank.exe -i --crlf',
+        ['+'] =  'xclip -selection clipboard',
+        ['*'] =  'xclip -selection primary',
     },
     paste = {
-        ['+'] = 'win32yank.exe -o --lf',
-        ['*'] = 'win32yank.exe -o --lf',
+        ['+'] = 'xclip -selection clipboard -o',
+        ['*'] = 'xclip -selection primary -o',
     },
     cache_enabled = true,
 }
