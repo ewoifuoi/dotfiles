@@ -3,9 +3,11 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     dependencies = {"nvim-treesitter/nvim-treesitter"},
+    Lazy = false,
   },
   {
      "nvim-treesitter/nvim-treesitter",
+    Lazy = false,
     opts = function(_, opts)
       opts.textobjects = {
         select = {
