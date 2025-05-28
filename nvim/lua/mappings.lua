@@ -7,6 +7,7 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {desc = "Close NvimTree"})
+map({"n", "i"}, "<C-a>", "<ESC>gg0vG")
 
 
 local function find_pyproject()
@@ -36,7 +37,7 @@ map({"n", "i"},"<F5>", function ()
     end
   elseif filetype == "cpp" then
     local output = "./" .. basename
-    cmd = "g++ --std=c++20 -O2 -o " .. output .." " .. filename .. "&&" .. output
+    cmd = "g++ --std=c++20 -O2 -g -o " .. output .." " .. filename .. "&&" .. output
   end
   vim.cmd("split | terminal " .. cmd)
   vim.cmd("startinsert")
