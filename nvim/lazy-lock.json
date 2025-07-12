@@ -34,6 +34,7 @@
   "ui": { "branch": "v3.0", "commit": "7c51760f8772a6695875ac29f8b3c398da7753f0" },
   "undotree": { "branch": "master", "commit": "b951b87b46c34356d44aa71886aecf9dd7f5788a" },
   "vim-fugitive": { "branch": "master", "commit": "4a745ea72fa93bb15dd077109afbb3d1809383f2" },
+  "vim-gas": { "branch": "master", "commit": "fb0442f37e2db49a2e7a18e21dfc87a443020c8d" },
   "volt": { "branch": "main", "commit": "c45d5f48da8e802e608b5c6da471ca4d84276dfb" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
 }
