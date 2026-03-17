@@ -108,7 +108,7 @@ RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}]"
 # Useful support for interacting with Terminal.app or other terminal programs
 [ -r "/etc/zshrc_$TERM_PROGRAM" ] && . "/etc/zshrc_$TERM_PROGRAM"
 
-export http_proxy="http://127.0.0.1:7897"
+export http_proxy="http://127.0.0.1:7890"
 export https_proxy=$http_proxy
 
 
