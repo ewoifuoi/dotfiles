@@ -38,6 +38,9 @@ map({"n", "i"},"<F5>", function ()
   elseif filetype == "cpp" then
     local output = "./" .. basename
     cmd = "g++ --std=c++20 -O2 -g -o " .. output .." " .. filename .. " && " .. output
+  elseif filetype == "rust" then
+    local output = "./" .. basename
+    cmd = "rustc " .. filename .." -o " .. output .. " && " .. output
   end
 
   if cmd ~= "" then
