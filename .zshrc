@@ -79,7 +79,8 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -108,8 +109,8 @@ RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}]"
 # Useful support for interacting with Terminal.app or other terminal programs
 [ -r "/etc/zshrc_$TERM_PROGRAM" ] && . "/etc/zshrc_$TERM_PROGRAM"
 
-export http_proxy="http://127.0.0.1:7890"
-export https_proxy=$http_proxy
+# export http_proxy="http://127.0.0.1:7890"
+# export https_proxy=$http_proxy
 
 
 alias c='clear'
