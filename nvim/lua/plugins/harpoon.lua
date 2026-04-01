@@ -1,25 +1,18 @@
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
-  dependencies = { "nvim-lua/plenary.nvim" }, -- 确保 plenary 也加载
-  lazy = false, -- 让 Lazy.nvim 立即加载 Harpoon
+  dependencies = { "nvim-lua/plenary.nvim" },
+  keys = {
+    { "<leader>a", function() require("harpoon"):list():add() end, desc = "Harpoon add" },
+    { "<C-e>", function() local harpoon = require("harpoon"); harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon menu" },
+    { "<C-h>", function() require("harpoon"):list():select(1) end, desc = "Harpoon 1" },
+    { "<C-t>", function() require("harpoon"):list():select(2) end, desc = "Harpoon 2" },
+    { "<C-n>", function() require("harpoon"):list():select(3) end, desc = "Harpoon 3" },
+    { "<C-s>", function() require("harpoon"):list():select(4) end, desc = "Harpoon 4" },
+    { "<C-S-P>", function() require("harpoon"):list():prev() end, desc = "Harpoon prev" },
+    { "<C-S-N>", function() require("harpoon"):list():next() end, desc = "Harpoon next" },
+  },
   config = function()
-    local harpoon = require("harpoon")
-    harpoon.setup()
-
-
-    vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-    vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-    vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
-    vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
-    vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
-    vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
-
--- Toggle previous & next buffers stored within Harpoon list
-    vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
-    vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
-
+    require("harpoon").setup()
   end,
 }
-

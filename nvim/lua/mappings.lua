@@ -39,8 +39,12 @@ map({"n", "i"},"<F5>", function ()
     local output = "./" .. basename
     cmd = "g++ --std=c++20 -O2 -g -o " .. output .." " .. filename .. "&&" .. output
   end
-  vim.cmd("split | terminal " .. cmd)
-  vim.cmd("startinsert")
+  require("nvchad.term").runner({
+    pos = "sp",
+    cmd = cmd,
+    id = "code_runner",
+    clear_cmd = true
+  })
 end)
 
 
