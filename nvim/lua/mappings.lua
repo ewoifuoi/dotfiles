@@ -37,14 +37,21 @@ map({"n", "i"},"<F5>", function ()
     end
   elseif filetype == "cpp" then
     local output = "./" .. basename
-    cmd = "g++ --std=c++20 -O2 -g -o " .. output .." " .. filename .. "&&" .. output
+    cmd = "g++ --std=c++20 -O2 -g -o " .. output .." " .. filename .. " && " .. output
   end
-  require("nvchad.term").runner({
-    pos = "sp",
-    cmd = cmd,
-    id = "code_runner",
-    clear_cmd = true
-  })
+
+  if cmd ~= "" then
+
+    cmd = cmd .. "\nexit"
+    require("nvchad.term").runner({
+      pos = "sp",
+      cmd = cmd,
+      id = "code_runner",
+      clear_cmd = true
+    })
+  else
+    vim.notify("No run command defined for filetype: " .. filetype, vim.log.levels.WARN)
+  end
 end)
 
 
