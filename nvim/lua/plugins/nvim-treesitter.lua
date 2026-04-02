@@ -24,11 +24,11 @@ return {
           enable = true,
           set_jumps = true,
           goto_next_start = {
-            ["fj"] = "@function.outer",
+            ["]f"] = "@function.outer",
             ["]c"] = "@class.outer",
           },
           goto_previous_start = {
-            ["fk"] = "@function.outer",
+            ["[f"] = "@function.outer",
             ["[c"] = "@class.outer",
           },
         },

@@ -10,52 +10,10 @@ map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {desc = "Close NvimTree"})
 map({"n", "i"}, "<C-a>", "<ESC>gg0vG")
 
 
-local function find_pyproject()
-  local path = vim.fn.expand("%:p:h")
-  while path ~= "/" do
-    if vim.fn.filereadable(path .. "/pyproject.toml") == 1 then
-      return true
-    end
-    path = vim.fn.fnamemodify(path, ":h")
-  end
-  return false
-end
-
-map({"n", "i"},"<F5>", function ()
-  local filetype = vim.bo.filetype
-  local filename = vim.fn.expand("%:p")
-  local basename = vim.fn.expand("%:t:r")
-  local cmd = ""
-
-  vim.cmd("w")
-
-  if filetype == "python" then
-    if find_pyproject() then
-      cmd = "uv run " .. filename
-    else
-      cmd = "python " .. filename
-    end
-  elseif filetype == "cpp" then
-    local output = "./" .. basename
-    cmd = "g++ --std=c++20 -O2 -g -o " .. output .." " .. filename .. " && " .. output
-  elseif filetype == "rust" then
-    local output = "./" .. basename
-    cmd = "rustc " .. filename .." -o " .. output .. " && " .. output
-  end
-
-  if cmd ~= "" then
-
-    cmd = cmd .. "\nexit"
-    require("nvchad.term").runner({
-      pos = "sp",
-      cmd = cmd,
-      id = "code_runner",
-      clear_cmd = true
-    })
-  else
-    vim.notify("No run command defined for filetype: " .. filetype, vim.log.levels.WARN)
-  end
-end)
+-- 运行代码的快捷键 (逻辑被抽离到了 lua/configs/runner.lua 中)
+map({"n", "i"}, "<F5>", function()
+  require("configs.runner").run_code()
+end, { desc = "Run Code" })
 
 
 
