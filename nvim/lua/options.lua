@@ -21,3 +21,13 @@ vim.g.clipboard = {
     },
     cache_enabled = true,
 }
+
+-- 当 NvimTree 是仅存的最后一个窗口时，自动关闭 Neovim
+vim.api.nvim_create_autocmd("BufEnter", {
+    nested = true,
+    callback = function()
+      if #vim.api.nvim_list_wins() == 1 and vim.bo.filetype == "NvimTree" then
+        vim.cmd("quit")
+      end
+    end
+})
