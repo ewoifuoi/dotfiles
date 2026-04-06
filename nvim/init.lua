@@ -38,4 +38,7 @@ vim.schedule(function()
   require "mappings"
 end)
 
-
+vim.opt.shiftwidth = 4   -- 每一级缩进占用的空格数
+vim.opt.tabstop = 4      -- 一个 Tab 占用的空格数
+vim.opt.softtabstop = 4  -- 编辑模式下按退格键退回的空格数
+vim.opt.expandtab = true -- 将 Tab 转换为空格
