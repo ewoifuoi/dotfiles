@@ -1,7 +1,0 @@
-wsl.exe : Error in command line:
-At C:\Users\zhendli\AppData\Local\Temp\ps-script-74b2ce15-5e59-4ca6-b7aa-20550c0c76e3.ps1:94 char:1
-+ & wsl.exe -d archlinux -e sh -lc 'nvim --clean --headless "+lua packa ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (Error in command line::String) [], RemoteException
-    + FullyQualifiedErrorId : NativeCommandError
- 
