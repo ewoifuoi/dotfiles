@@ -14,6 +14,9 @@ M.base46 = {
 		["@comment"] = { fg = "#9ca3af", italic = true },
 		LineNr = { fg = "#737aa2" }, -- 普通行号颜色调亮
 		CursorLineNr = { fg = "#c0caf5", bold = true }, -- 当前光标所在行号更亮
+    LspReferenceText = { bg = "NONE", underline = true },
+    LspReferenceRead = { bg = "NONE", underline = true },
+    LspReferenceWrite = { bg = "NONE", underline = true },
 	},
 }
 

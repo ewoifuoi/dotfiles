@@ -11,6 +11,7 @@ return {
       vim.list_extend(opts.ensure_installed, { "c", "cpp" })
       opts.indent = {
         enable = true,
+        disable = { "c", "cpp" },
       }
       opts.textobjects = {
         select = {
