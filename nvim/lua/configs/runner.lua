@@ -39,6 +39,10 @@ function M.run_code()
       cmd = compiler .. " " .. std .. " -O2 -g -o " .. output .." " .. filename .. " && " .. output
     end
 
+  elseif filetype == "glsl" then
+    local output = "./" .. basename
+    cmd = "glslc " .. filename .." -o " .. filename .. ".spv"
+
   elseif filetype == "rust" then
     local output = "./" .. basename
     cmd = "rustc " .. filename .." -o " .. output .. " && " .. output
