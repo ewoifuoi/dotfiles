@@ -8,6 +8,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {desc = "Close NvimTree"})
 map({"n", "i"}, "<C-a>", "<ESC>gg0vG")
+map("n", "zz", "zz10<C-e>", {silent=true})
 
 
 -- 运行代码的快捷键 (逻辑被抽离到了 lua/configs/runner.lua 中)
